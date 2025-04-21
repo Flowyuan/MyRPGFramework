@@ -1,6 +1,6 @@
 namespace Core.ECSCore
 {
-    public enum ComponetTypeNum 
+    public enum ComponentTypeAmountEnum 
     {
         Num64 = 1,
         Num128 = 2,

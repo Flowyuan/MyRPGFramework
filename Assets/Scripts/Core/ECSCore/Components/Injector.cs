@@ -1,10 +1,9 @@
 using Components;
-using Core.ECSCore.Entities;
 using UnityEngine;
 
 namespace Core.ECSCore
 {
-    public abstract class RInjector:MonoBehaviour
+    public abstract class Injector:MonoBehaviour
     {
         public void InjectToEntity()
         {

@@ -1,44 +1,33 @@
 using System;
 using System.Collections.Generic;
-using Core.ECSCore.Components;
 using UnityEngine;
 
 namespace Core.ECSCore
 {
     public partial class Entity:MonoBehaviour
     {
-        private CommonMask _ownCommon;
-        protected Dictionary<Type, RComponent> _type2Component = new() ;
-        [SerializeField] protected List<RComponent> _components = new();
+        public int EntityID 
+        { 
+            get =>_entityID; 
+            set =>_entityID = value;
+        }
+        
+        [SerializeField] private int _entityID;
 
-        public T AddComponent<T>() where T:RComponent
+        public void AddComponent<T>() where T:struct, IComponent
         {
-            Type type = typeof(T);
-            T component = Activator.CreateInstance<T>();
-            if(_type2Component.TryGetValue(type, out RComponent list))
-            {
-                throw new();
-            }
-            _type2Component.Add(type, component);
-            
+            ComponentManager.TryAddComponent<T>(_entityID, out var componentID);
+        }
+
+        public bool HasComponent<T>() where T:struct, IComponent
+        {
+            return ComponentManager.ContainsComponent<T>(_entityID);
+        }
+
+        public T ObtainComponent<T>() where T:struct, IComponent
+        {
+            ComponentManager.TryObtainComponent<T>(_entityID, out T component);
             return component;
-        }
-
-        public bool HasComponent<T>() where T : RComponent
-        {
-            Type type = typeof(T);
-            return _type2Component.ContainsKey(type);
-        }
-
-        public T ObtainComponent<T>() where T : RComponent
-        {
-            _type2Component.TryGetValue(typeof(T), out RComponent component);
-            return component as T;
-        }
-
-        public void RemoveComponent<T>() where T : RComponent
-        {
-            _type2Component.Remove(typeof(T));
         }
     }
 }
