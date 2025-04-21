@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Components;
 using Components.Enum;
 using Core;
-using Core.ECSCore.Systems;
+using Core.ECSCore;
 using UnityEngine;
 using static Core.EntityManager;
 

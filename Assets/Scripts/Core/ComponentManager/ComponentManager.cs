@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Core.Components;
+using Core.ECSCore.Components;
 using UnityEngine;
 
 namespace Core.ComponentManager

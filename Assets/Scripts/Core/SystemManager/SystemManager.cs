@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.ECSCore.Systems;
+using Core.ECSCore;
 using Core.Entities;
 using Core.Systems;
 using Core.Systems.Interface;

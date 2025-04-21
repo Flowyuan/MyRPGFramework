@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using Core.ECSCore.Components;
 using UnityEngine;
 
-namespace Core.ECSCore.Entities
+namespace Core.ECSCore
 {
     public partial class Entity:MonoBehaviour
     {
+        private CommonMask _ownCommon;
         protected Dictionary<Type, RComponent> _type2Component = new() ;
         [SerializeField] protected List<RComponent> _components = new();
 

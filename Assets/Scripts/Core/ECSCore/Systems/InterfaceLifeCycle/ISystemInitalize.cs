@@ -1,4 +1,4 @@
-namespace Core.ECSCore.Systems
+namespace Core.ECSCore
 {
     public interface ISystemInitalize:ISystem
     {

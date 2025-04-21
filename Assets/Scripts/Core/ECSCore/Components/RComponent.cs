@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core.ECSCore.Components
+namespace Core.ECSCore
 {
     [Serializable]
     public class RComponent

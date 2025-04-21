@@ -1,4 +1,4 @@
-namespace Core.ECSCore.Components
+namespace Core.ECSCore
 {
     public interface IComponent
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Core.ECSCore.Systems
+namespace Core.ECSCore
 {
     public interface ISystemWithAlphaEntity:ISystem
     {
